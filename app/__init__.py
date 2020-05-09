@@ -1,5 +1,14 @@
 from flask import Flask
 
-app = Flask(__name__)
+from app.routes import root
 
-from app import routes
+
+def create_app():
+
+    appBuilder = Flask(__name__)
+    appBuilder.register_blueprint(root)
+
+    return appBuilder
+
+
+app = create_app()
