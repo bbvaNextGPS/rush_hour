@@ -8,7 +8,7 @@ def create_app():
 
     appBuilder = Flask(__name__)
     appBuilder.register_blueprint(root)
-    CORS(appBuilder, resources={r"/api/*": {"origins": "*"}})
+    CORS(appBuilder)
 
     return appBuilder
 
