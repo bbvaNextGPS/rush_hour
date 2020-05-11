@@ -1,4 +1,4 @@
-name: Vue with Node
+name: Python with Flask
 
 on:
   push:
