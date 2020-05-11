@@ -9,6 +9,7 @@ setup(
     install_requires=[
         'populartimes',
         'flask',
+        'flask-cors',
         'gunicorn'
     ],
 )
