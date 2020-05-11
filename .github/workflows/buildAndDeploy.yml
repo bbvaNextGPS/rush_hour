@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Clone project
         run: /home/ubuntu/deploy-actions/python/clone.sh ${GITHUB_REF##*/}
-      - name: Build with Node
+      - name: Build with Python
         run: /home/ubuntu/deploy-actions/python/build.sh ${GITHUB_REF##*/}
       - name: Deploy
         run: /home/ubuntu/deploy-actions/python/deploy.sh ${GITHUB_REF##*/}
