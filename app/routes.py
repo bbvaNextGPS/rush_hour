@@ -8,3 +8,7 @@ root = Blueprint('root', __name__, url_prefix='/')
 def rush_hour(google_id):
     j_response = populartimes.get_id(os.environ['API_KEY'], google_id)
     return j_response
+
+@root.route("api/v1/")
+def helloWorld():
+    return "Hello, cross-origin-world!"
