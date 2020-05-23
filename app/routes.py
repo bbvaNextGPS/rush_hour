@@ -9,16 +9,16 @@ root = Blueprint('root', __name__, url_prefix='/')
 
 @root.route('/api/v1/rush_hour/<google_id>', methods=['GET'], )
 def rush_hour(google_id):
-    current = request.args.get('current')
+    fields = request.args.get('fields')
     j_response = populartimes.get_id(os.environ['API_KEY'], google_id)
-    if current == 'true':
-        if 'current_popularity' in j_response:
+    if fields:
+        if fields in j_response.keys():
             return jsonify(
-                occupancy=j_response['current_popularity']
+                {fields: j_response[fields]}
             )
         else:
             return jsonify(
-                occupancy=None
+                None
             )
     else:
         return j_response
