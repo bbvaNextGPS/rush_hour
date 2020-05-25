@@ -15,7 +15,7 @@ def rush_hour(google_id):
     timeOffset = request.args.get('timezoneOffset')
     j_response = populartimes.get_id(os.environ['API_KEY'], google_id)
     if fields:
-        if fields in j_response.keys():
+        if 'populartimes' in j_response.keys():
             return jsonify(
                 {fields: popular_date.get_current_popularity(j_response, int(timeOffset))}
             )
